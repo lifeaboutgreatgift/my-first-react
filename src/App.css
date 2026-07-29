@@ -6,61 +6,95 @@
 
 body{
   font-family: 'Segoe UI', sans-serif;
-  background: #0f1117;
-  color: white;
-  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 
+}
+
+body::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0f1117 url('/src/assets/checks_hearts.jpg') no-repeat center/cover;
+  z-index: -1;
 }
 
 .app{
-  text-align: center;
-  background: #1a1d27;
   padding: 3rem;
-  border-radius: 16px;
-  border: 1px solid #2a2d3a;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  border: 1px solid #afb4c7;
+  position: relative;
+}
+
+.app::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+
 }
 
 h1{
-  font-size: 1.5rem;
-  color: #a5b4fc;
+  text-align: top-left;
+  text-decoration: underline wavy;
+  font-size: 1.8rem;
+  color: #ff9bce;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
   margin-bottom: 1.5rem;
 }
 
 .count{
+  text-align: center;
   font-size: 5rem;
   font-weight: 700;
   color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   margin-bottom: 2rem;
-  min-width: 150px;
 }
 
 .buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  align-items: center ;
 }
 
 button {
   width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  height: 40px;
   border: none;
-  font-size: 1.5rem;
+  background-color: transparent;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
   cursor: pointer;
-  background: #6366f1;
-  color: white;
-  transition: all 0.2s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 button:hover{
-  background: #4f46e5;
-  transform: scale(1.1);
+  background: transparent;
+  transform: scale(1.08) rotate(-1deg);
+}
+
+button:active{
+  transform: scale(0.95);
 }
 
 button:nth-child(2){
-  background: #374151;
-  font-size: 0.8rem;
+  background: transparent;
 }
