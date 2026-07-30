@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>My Counter</h1>
+      <h1>Counter</h1>
       <p className="count" style={{ color: color }}>{count}</p>
       <div className="buttons">
 
