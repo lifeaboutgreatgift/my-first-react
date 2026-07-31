@@ -4,6 +4,15 @@ import subbtn from './assets/sub-btn.png'
 import restbtn from './assets/rest-btn.png'
 import addbtn from './assets/add-btn.png'
 
+function CounterButton({ image, onClick }) {
+  return (
+    <button 
+      onClick={onClick}
+      className="ink-nav-button"
+      style={{ backgroundImage: `url(${image})`}}
+      ></button>
+  );
+}
 function App() {
   const [count, setCount] = useState(0)
   const [step] = useState(1)
@@ -16,25 +25,21 @@ function App() {
       <p className="count" style={{ color: color }}>{count}</p>
       <div className="buttons">
 
+       <CounterButton 
+         image={subbtn}
+         onClick={() => setCount(count-step)} 
+        />
+
+        <CounterButton 
+         image={restbtn}
+         onClick={() => setCount(0)} 
+        />
         
-        <button
-         onClick={() => setCount(count - step)}
-         className="ink-nav-button"
-         style={{ backgroundImage: `url(${subbtn})`}}
-         >
-         </button>
-        <button
-         onClick={() => setCount(0)}
-         className="ink-nav-button"
-         style={{ backgroundImage: `url(${restbtn})`}}
-         >
-         </button>
-        <button 
-        onClick={() => count < 10 && setCount(count + step)}
-        className="ink-nav-button"
-        style={{ backgroundImage: `url(${addbtn})`}}
-        >
-        </button>
+        <CounterButton 
+         image={addbtn}
+         onClick={() => count < 100 && setCount(count+step)} 
+        />
+        
       </div>
     </div>
   )
