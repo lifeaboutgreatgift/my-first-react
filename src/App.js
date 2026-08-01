@@ -23,6 +23,7 @@ function App() {
     <div className="app">
       <h1>Counter</h1>
       <p className="count" style={{ color: color }}>{count}</p>
+      {count === 100 && <p className="max-msg">Max reached! 🎉</p>}
       <div className="buttons">
 
        <CounterButton 
